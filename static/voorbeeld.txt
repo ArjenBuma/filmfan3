@@ -1,0 +1,31 @@
+# Importing these will make the db.create_all()
+# function create these blueprints as tables
+# from models.film import Film
+# from models.regisseur import Regisseur
+# from models.acteur import Acteur
+# from models.rol import Rol
+# from models.user import User
+
+# https://stackoverflow.com/questions/1045910/how-to-import-load-a-sql-or-csv-file-into-sqlite
+# Importing .csv file to sql db:
+# .mode csv <table_name>
+# .import <filename> <table_name>
+# .separator ";"
+# Extra commands needed:
+# sqlite3 .\instance\filmfan.db <- go to sqlite db
+# .tables <- list tables
+# select * from regisseurs; <- select data from table
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link href="../static/bootstrap.min.css" rel="stylesheet">
+        <!-- Latest compiled JavaScript -->
+        <script src="../static/bootstrap.min.js"></script>
+        <title>filmfan films</title>
+
+    </head>
+
+    # from ..auth.auth import login_required, get_user

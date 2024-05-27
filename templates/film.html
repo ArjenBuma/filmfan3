@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}{{film.titel}}{% endblock %}
+{% block header %}{{film.titel}}{% endblock %}
+
+{% block body %}
+<div class="container">
+    
+    <div class="row justify-content-center">
+        
+        <div class="col-4" style="padding: 10px">
+            <div class="card" style="width: 28rem;">
+                <img src="../static/Films/{{film.titel}}.jpg" height="500px" class="card-img-top" alt="none">
+                <div class="card-body">
+                    <h5 class="card-title">{{film.titel}} [{{film.id}}]</h5>
+                    <p class="card-text">{{film.plot}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Regisseur: {{reg.voornaam}} {{reg.achternaam}} </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

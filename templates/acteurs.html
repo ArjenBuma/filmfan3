@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}filmfan{% endblock %}
+{% block header %}Acteurs{% endblock %}
+
+{% block body %}
+<div class="container">
+    
+    <div class="row">
+        
+        {%for i in range(0, length)%}
+        <div class="col-4" style="padding: 10px">
+            <div class="card" style="width: 18rem;">
+                <img src="../static/Acteurs/{{acteurs[i].voornaam}}_{{acteurs[i].achternaam}}.jpg" height="300px" class="card-img-top" alt="none">
+                <div class="card-body">
+                    <h5 class="card-title">{{acteurs[i].voornaam}} {{acteurs[i].achternaam}} [{{acteurs[i].id}}]</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Film 1</li>
+                    <li class="list-group-item">Film 2</li>
+                    <li class="list-group-item">Film 3</li>
+                </ul>
+
+                <!--  -->
+                <a href="/acteur/{{acteurs[i].id}}" class="btn btn-primary stretched-link">Goto</a>
+            </div>
+        </div>
+        {%endfor%}
+
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}filfan films{% endblock %}
+{% block header %}Films{% endblock %}
+
+{% block body %}
+<div class="container">
+    
+    <div class="row">
+        
+        {%for i in range(0, films|length)%}
+            <div class="col-4" style="padding: 10px">
+                <div class="card" style="width: 18rem;">
+                    <a href="/film/{{films[i].id}}">
+                        <img src="../static/Films/{{films[i].titel}}.jpg" height="300px" class="card-img-top" alt="none">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{films[i].titel}} [{{films[i].id}}]</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" onclick="navigateToRegisseur({{ regs[i].id }})">Regisseur: {{regs[i].voornaam}} {{regs[i].achternaam}} </li>
+                    </ul>
+                    <ul class="list-group list-group-flush">
+                        {%for j in range(0, rollen[i]|length)%}
+                            <li class="list-group-item">Karakter: {{ rollen[i][j].naam_personage }} </li>       
+                        {%endfor%}
+                    </ul>
+                </div>
+            </div>
+        {%endfor%}
+
+    </div>
+
+</div>
+
+<script>
+function navigateToRegisseur(id){
+    window.location.href = `/regisseur/${id}`
+}
+</script>
+{% endblock %}        
