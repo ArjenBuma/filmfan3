@@ -1,0 +1,12 @@
+# Start sqlite
+sqlite3 .\instance\filmfan.db
+# Show tables
+.tables
+
+# Select form table
+select * from film;
+select * from rol;
+
+# Add .csv file
+.mode csv
+.import C:/path/to/file.csv table_name
